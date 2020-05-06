@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: none;
+    overflow: hidden;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.clock .number--1 {
+    --rotation: 30deg
+}
+
+.clock .number--2 {
+    --rotation: 60deg
+}
+
+.clock .number--3 {
+    --rotation: 90deg
+}
+
+.clock .number--4 {
+    --rotation: 120deg
+}
+
+.clock .number--5 {
+    --rotation: 150deg
+}
+
+.clock .number--6 {
+    --rotation: 180deg
+}
+
+.clock .number--7 {
+    --rotation: 210deg
+}
+
+.clock .number--8 {
+    --rotation: 240deg
+}
+
+.clock .number--9 {
+    --rotation: 270deg
+}
+
+.clock .number--10 {
+    --rotation: 300deg
+}
+
+.clock .number--11 {
+    --rotation: 330deg
+}
+
+
+
+
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    transform-origin: bottom;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: 2;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 3;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second {
+    width: 4px;
+    height: 48%;
+    background-color: red
+}
+
+.clock .hand.minute {
+    width: 8px;
+    height: 42%;
+    background-color: black
+}
+
+.clock .hand.hour {
+    width: 12px;
+    height: 32%;
+    background-color: black
+}
+
+
+/*parallax*/
+
+.section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.parallax {
+    position: relative;
+    height: 100%;
+}
+
+.parallax--mountain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.parallax--mountain_1 {
+    background: url('../img/m_1.png') 0 0 / cover no-repeat;
+}
+
+.parallax--mountain_2 {
+    background: url('../img/m_2.png') bottom right / 45% no-repeat;
+    z-index: 4;
+}
+
+.parallax--mountain_3 {
+    background: url('../img/m_3.png') bottom left / 100% no-repeat;
+    z-index: 4;
+}
+
+.parallax--fog {
+    background: url('../img/fog_1.png') bottom / 100% no-repeat;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
